@@ -55,7 +55,7 @@ public class BankBookDAOTest extends MyJunitTest {
 	}
 	
 	//update
-	@Test
+	//@Test
 	public void updateTest() throws Exception{
 		BankBookDTO bankBookDTO = new BankBookDTO();
 		bankBookDTO.setBookName("t4");
