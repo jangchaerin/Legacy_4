@@ -23,9 +23,9 @@ public class BankBookDTO {
 		this.bookName = bookName;
 	}
 	public String getBookContents() {
-		return bookContents;
+		return bookContents; 
 	}
-	public void setBookcontents(String bookContents) {
+	public void setBookContents(String bookContents) {
 		this.bookContents = bookContents;
 	}
 	public Double getBookRate() {

@@ -15,20 +15,16 @@ public class BankBookDAO {
 	
 	//list 가지고 올 메소드
 	public List<BankBookDTO> list() throws Exception {
-		String name="";
 		return sqlSession.selectList(NAMESPACE+"list");
 	}
 	//detail
 	public BankBookDTO detail(BankBookDTO bankBookDTO) throws Exception{	
 		return sqlSession.selectOne(NAMESPACE+"detail", bankBookDTO);
 	}
-	
-	
 	//insert
 	public int add(BankBookDTO bankBookDTO) throws Exception{
 		return sqlSession.insert(NAMESPACE+"add", bankBookDTO);
 	}
-	
 	//delete 
 	public int delete(BankBookDTO bankBookDTO) throws Exception{
 		return sqlSession.delete(NAMESPACE+"delete", bankBookDTO);
@@ -36,8 +32,5 @@ public class BankBookDAO {
 	//update
 	public int update(BankBookDTO bankBookDTO) throws Exception{
 		return sqlSession.update(NAMESPACE+"update", bankBookDTO);
-	}
-	
-	
-	
+	}	
 }

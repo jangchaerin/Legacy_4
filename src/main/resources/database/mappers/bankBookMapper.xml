@@ -5,26 +5,26 @@
 
 <mapper namespace="com.chaerin.s4.bankbook.BankBookDAO">
 
-	<select id="list" resultType="com.chaerin.s4.bankbook.BankBookDTO">
+	<select id="list" resultType="BankBookDTO">
 		SELECT * FROM BANKBOOK
 	</select>
 
-	<select id="detail"  resultType="com.chaerin.s4.bankbook.BankBookDTO">
+	<select id="detail"  parameterType="BankBookDTO" resultType="BankBookDTO">
 		SELECT * FROM BANKBOOK WHERE BOOKNUMBER=#{bookNumber}
 	</select>
 
-	<insert id="add" parameterType="com.chaerin.s4.bankbook.BankBookDTO">
-		insert into bankbook(booknumber, bookname, bookcontents, bookrate, booksale)
-		values(bankbook_seq.nextval, #{bookName},#{bookContents}, #{bookRate}, #{bookSale})
-	</insert>
+	<insert id="add" parameterType="BankBookDTO">
+ 		insert into bankbook (booknumber, bookname, bookcontents, bookrate, booksale)
+		values (bankbook_seq.nextval, #{bookName}, #{bookContents}, #{bookRate}, #{bookSale})
+ 	</insert>
 	
-	<delete id="delete" parameterType="com.chaerin.s4.bankbook.BankBookDTO" >
+	<delete id="delete" parameterType="BankBookDTO" >
 		delete bankbook where booknumber = #{bookNumber}
 	</delete>
-	<update id="update" parameterType="com.chaerin.s4.bankbook.BankBookDTO">
+	<!-- <update id="update" parameterType="BankBookDTO">
 		UPDATE BANKBOOK SET BOOKNAME = #{bookName} where #{bookNumber}
 	</update>
-
+ -->
 
 
 
