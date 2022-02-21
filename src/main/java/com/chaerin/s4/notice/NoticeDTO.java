@@ -1,6 +1,6 @@
 package com.chaerin.s4.notice;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class NoticeDTO {
 	
@@ -8,10 +8,8 @@ public class NoticeDTO {
 	private String title;
 	private String contents;
 	private String writer;
-	private Date regdate;
+	private Date regDate;
 	private long hit;
-	
-	
 	public long getNum() {
 		return num;
 	}
@@ -36,11 +34,11 @@ public class NoticeDTO {
 	public void setWriter(String writer) {
 		this.writer = writer;
 	}
-	public Date getRegdate() {
-		return regdate;
+	public Date getRegDate() {
+		return regDate;
 	}
-	public void setRegdate(Date regdate) {
-		this.regdate = regdate;
+	public void setRegDate(Date regDate) {
+		this.regDate = regDate;
 	}
 	public long getHit() {
 		return hit;
@@ -48,6 +46,7 @@ public class NoticeDTO {
 	public void setHit(long hit) {
 		this.hit = hit;
 	}
+
 	
 	
 	

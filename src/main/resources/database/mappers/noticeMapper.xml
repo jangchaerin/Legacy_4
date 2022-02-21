@@ -5,7 +5,25 @@
  
     
     <mapper namespace="com.chaerin.s4.notice.NoticeDAO">
-    	
-    	
+    	<select id="list" resultType="NoticeDTO">
+			SELECT * FROM NOTICE
+		</select>
+	
+    	<select id="detail"  parameterType="NoticeDTO" resultType="NoticeDTO">
+			SELECT * FROM NOTICE WHERE NUM=#{num}
+		</select>
+		
+		<insert id="add" parameterType="NoticeDTO">
+			INSERT INTO NOTICE(NUM, TITLE, CONTENTS, WRITER, REGDATE, HIT)
+			VALUES(NOTICE_SEQ.NEXTVAL, #{title},#{contents},#{writer},SYSDATE,#{hit})
+		</insert>
+		
+		<delete id="delete" parameterType="NoticeDTO">
+			DELETE NOTICE WHERE NUM=#{num}
+		</delete>
+	
+	
+	
+	
     
     </mapper>
