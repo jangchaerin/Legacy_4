@@ -14,6 +14,15 @@ import org.springframework.web.servlet.ModelAndView;
 public class BankbookController {
 	@Autowired
 	private BankBookService bankBookService;
+	
+	//delete
+	@RequestMapping("delete")
+	public String delete(BankBookDTO bankBookDTO) throws Exception{
+		int result=bankBookService.delete(bankBookDTO);
+		
+		return "redirect:./list";
+	}
+	
 		//detail
 	@RequestMapping(value="detail", method=RequestMethod.GET)
 	public void detail(BankBookDTO bankBookDTO, Model model) throws Exception{

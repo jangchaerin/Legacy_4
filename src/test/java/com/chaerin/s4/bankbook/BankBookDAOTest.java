@@ -38,7 +38,7 @@ public class BankBookDAOTest extends MyJunitTest {
 		for(int i=0;i<10;i++) {
 		BankBookDTO bankBookDTO = new BankBookDTO();
 		bankBookDTO.setBookName("bookName"+i);
-		bankBookDTO.setBookcontents("Contents"+i);
+		bankBookDTO.setBookContents("Contents"+i);
 		bankBookDTO.setBookRate(1.12+i);
 		bankBookDTO.setBookSale(1);
 		int result = bankBookDAO.add(bankBookDTO);
