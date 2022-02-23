@@ -15,5 +15,10 @@
     		INSERT INTO MEMBER (ID, PW, NAME, PHONE, EMAIL)
     		VALUES (#{id}, #{pw},#{name},#{phone},#{email})
     	</insert>
+    	
+    	<select id="mypage" parameterType="MemberDTO" resultType="MemberDTO">
+    SELECT ID,NAME,PHONE,EMAIL FROM MEMBER
+    WHERE ID=#{id}
+    </select>
    
     </mapper>
