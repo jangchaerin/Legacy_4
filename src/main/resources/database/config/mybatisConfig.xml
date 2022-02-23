@@ -7,12 +7,12 @@
 		<typeAlias type="com.chaerin.s4.bankbook.BankBookDTO"
 			alias="BankBookDTO" />
 		<typeAlias type="java.lang.Long" alias="Long" />
-		
+
 		<typeAlias type="com.chaerin.s4.notice.NoticeDTO"
 			alias="NoticeDTO" />
 		<typeAlias type ="com.chaerin.s4.member.MemberDTO"
 			alias="MemberDTO"/>
-	
+
 	</typeAliases>
 
 </configuration>
