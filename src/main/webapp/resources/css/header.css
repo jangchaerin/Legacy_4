@@ -1,0 +1,44 @@
+@charset "UTF-8";
+.header{
+    height: 70px;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav_main{
+    width: 500px;
+}
+
+.nav_main > ul{
+
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav_main a{
+    list-style:none;
+    color:white;
+}
+
+.nav_sub{
+    width: 200px;
+}
+
+.nav_sub > ul {
+	display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.nav_sub a {
+    list-style: none;
+    color: white;
+}
+
+.icon{
+	vertical-align: baseline;
+}
+
