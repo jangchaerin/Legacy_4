@@ -5,9 +5,17 @@
  
     
     <mapper namespace="com.chaerin.s4.notice.NoticeDAO">
+    
     	<select id="list" resultType="NoticeDTO">
-			SELECT * FROM NOTICE
-		</select>
+		SELECT * FROM
+		(SELECT ROWNUM R, N.* FROM
+		(SELECT * FROM NOTICE ORDER BY NUM DESC)N)
+		WHERE R BETWEEN #{startRow} AND #{lastRow}
+	</select>
+	
+	<select id="total" resultType="Long">
+	SELECT COUNT(NUM) FROM NOTICE
+	</select>
 	
     	<select id="detail"  parameterType="NoticeDTO" resultType="NoticeDTO">
 			SELECT * FROM NOTICE WHERE NUM=#{num}
@@ -21,9 +29,5 @@
 		<delete id="delete" parameterType="NoticeDTO">
 			DELETE NOTICE WHERE NUM=#{num}
 		</delete>
-	
-	
-	
-	
-    
+
     </mapper>

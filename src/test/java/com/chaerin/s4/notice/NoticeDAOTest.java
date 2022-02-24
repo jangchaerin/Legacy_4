@@ -16,16 +16,16 @@ import com.chaerin.s4.MyJunitTest;
 public class NoticeDAOTest extends MyJunitTest {
    @Autowired
    private NoticeDAO noticeDAO;
-   @Test
+  // @Test
    public void check() {
       assertNotNull(noticeDAO);
    }
-   @Test
-   public void listTest() throws Exception {
-      List<NoticeDTO> ar =noticeDAO.list();
-      assertNotEquals(0, ar.size());
-   }
-   @Test
+ //  @Test
+//   public void listTest() throws Exception {
+//      List<NoticeDTO> ar =noticeDAO.list();
+//      assertNotEquals(0, ar.size());
+//   }
+  // @Test
    public void addTest() throws Exception {
       NoticeDTO noticeDTO = new NoticeDTO();
       for(int i=0;i<7;i++) {

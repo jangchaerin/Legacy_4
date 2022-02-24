@@ -12,6 +12,7 @@
 			alias="NoticeDTO" />
 		<typeAlias type ="com.chaerin.s4.member.MemberDTO"
 			alias="MemberDTO"/>
+			<typeAlias type="com.chaerin.s4.util.Pager" alias="Pager"/>
 
 	</typeAliases>
 
