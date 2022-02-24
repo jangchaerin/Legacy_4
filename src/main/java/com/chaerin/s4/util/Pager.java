@@ -23,7 +23,7 @@ public class Pager {
 	      }
 	public void makeNum(Long totalCount) {
 		//1. 전체 row의 갯수 구하기
-		
+		//Long totalCount=237L;
 		
 		//2. 전체 page의 갯수 구하기
 		Long totalPage=totalCount/this.getPerPage();
@@ -62,7 +62,7 @@ public class Pager {
 		this.startNum=(curBlock-1)*perBlock+1;
 		this.lastNum=curBlock*perBlock;
 		
-		//8.이전,다음블럭유무
+		//7.이전,다음블럭유무
 		this.pre=false;
 		if(curBlock>1) {
 			//현재블록이 2,3,4. . . .
@@ -74,7 +74,7 @@ public class Pager {
 			this.next=true;
 		}
 		
-		//9. 현재 블럭이 마지막 블럭 번호랑 같다면
+		//8. 현재 블럭이 마지막 블럭 번호랑 같다면
 		if(curBlock == totalBlock) {
 			this.lastNum=totalPage;
 		}
