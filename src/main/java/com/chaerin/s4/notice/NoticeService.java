@@ -10,10 +10,10 @@ import com.chaerin.s4.util.Pager;
 public class NoticeService {
 	@Autowired
 	private NoticeDAO noticeDAO;
-	
+	//list
 	public List<NoticeDTO> list(Pager pager) throws Exception{
 		pager.makeRow();
-		Long totalCount=noticeDAO.total();
+		Long totalCount=noticeDAO.total(pager);
 		pager.makeNum(totalCount);
 		List<NoticeDTO>ar = noticeDAO.list(pager);
 		return ar;
@@ -27,6 +27,15 @@ public class NoticeService {
 	//add(insert)
 	public int add(NoticeDTO noticeDTO) throws Exception{
 		return noticeDAO.add(noticeDTO);
+	}
+	
+	//delete
+	public int delete(NoticeDTO noticeDTO) throws Exception{
+		return noticeDAO.delete(noticeDTO);
+	}
+	//update
+	public int update(NoticeDTO noticeDTO) throws Exception{
+		return noticeDAO.update(noticeDTO);
 	}
 
 

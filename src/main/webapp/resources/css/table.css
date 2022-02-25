@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+.table-sub{
+    width:100%;
+	border-collapse: collapse;
+}
+.table-sub td, .table-sub th{
+	border: 1px solid #f09bcc;
+	border-spacing: 0;
+	height: 35px;
+	border-collapse: collapse;
+}
+
+.table-sub tr:first-child{
+	background-color: #e96576;
+	height:60px;
+}

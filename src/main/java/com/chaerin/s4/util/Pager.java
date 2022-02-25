@@ -6,6 +6,9 @@ public class Pager {
 	private Long startRow;
 	private Long lastRow;
 	
+	private String search;
+	private String kind;
+	
 	private Long startNum;
 	   private Long lastNum;
 	   private boolean next;
@@ -102,4 +105,23 @@ public class Pager {
 	public void setPre(boolean pre) {
 		this.pre = pre;
 	}
+	public String getSearch() {
+		if(this.search==null) {
+			this.search="";
+		}
+		
+		
+		return search;
+	}
+	public void setSearch(String search) {
+		this.search = search;
+	}
+	public String getKind() {
+		return kind;
+	}
+	public void setKind(String kind) {
+		this.kind = kind;
+	}
+	
+	
 }

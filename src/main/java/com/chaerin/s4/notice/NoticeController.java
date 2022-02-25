@@ -44,5 +44,28 @@ public class NoticeController {
 	public void add() throws Exception{
 		
 	}
-
+	
+	//delete
+	@RequestMapping("delete")
+	public String delete(NoticeDTO noticeDTO) throws Exception{
+		int result=noticeService.delete(noticeDTO);
+		
+		return "redirect:./list";
+	}
+	
+	//update
+	@RequestMapping(value="update",method=RequestMethod.POST)
+	public String update(NoticeDTO noticeDTO) throws Exception{
+		int result=noticeService.update(noticeDTO);
+		return "redirect:./list";
+	}
+	@RequestMapping(value="update",method=RequestMethod.GET)
+		public void update(NoticeDTO noticeDTO, Model model) throws Exception{
+			noticeDTO=noticeService.detail(noticeDTO);
+			model.addAttribute("dto",noticeDTO);
+	
+		}
+	
+	
+	
 }

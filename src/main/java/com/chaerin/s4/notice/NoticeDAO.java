@@ -18,9 +18,9 @@ public class NoticeDAO {
 		public List<NoticeDTO> list(Pager pager) throws Exception{
 			return sqlSession.selectList(NAMESPACE+"list",pager);
 		}
-		//total
-		public Long total()throws Exception{
-			return sqlSession.selectOne(NAMESPACE+"total");
+	//total
+		public Long total(Pager pager)throws Exception{
+			return sqlSession.selectOne(NAMESPACE+"total",pager);
 		}
 	//detail
 		public NoticeDTO detail(NoticeDTO noticeDTO) throws Exception{	
@@ -34,5 +34,10 @@ public class NoticeDAO {
 	//delete
 		public int delete(NoticeDTO noticeDTO) throws Exception{
 			return sqlSession.delete(NAMESPACE+"delete", noticeDTO);
+		}
+	//update
+		public int update(NoticeDTO noticeDTO) throws Exception{
+			return sqlSession.update(NAMESPACE+"update",noticeDTO);
+			
 		}
 }

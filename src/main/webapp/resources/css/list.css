@@ -1,0 +1,13 @@
+@charset "UTF-8";
+.table1{
+    width: 70%;
+    margin: 0 auto;
+}
+
+.title{
+    margin-top:50px;
+}
+
+.table1>.table-sub{
+    margin-top: 10px;
+}
