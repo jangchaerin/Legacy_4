@@ -16,8 +16,8 @@ public class BankBookDAO {
 	private final String NAMESPACE="com.chaerin.s4.bankbook.BankBookDAO."; //변경금지하려고 혹시라도 다른거 쓰지 못하게
 	
 	//total
-	public Long total() throws Exception{
-		return sqlSession.selectOne(NAMESPACE+"total");
+	public Long total(Pager pager) throws Exception{
+		return sqlSession.selectOne(NAMESPACE+"total",pager);
 	}
 	
 	//list 가지고 올 메소드

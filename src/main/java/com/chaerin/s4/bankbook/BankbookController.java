@@ -39,7 +39,7 @@ public class BankbookController {
 		return "redirect:./list";
 	}
 	
-		//detail
+	//detail
 	@RequestMapping(value="detail", method=RequestMethod.GET)
 	public void detail(BankBookDTO bankBookDTO, Model model) throws Exception{
 		bankBookDTO = bankBookService.detail(bankBookDTO);
