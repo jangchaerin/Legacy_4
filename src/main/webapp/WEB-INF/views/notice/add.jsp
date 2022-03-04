@@ -12,8 +12,7 @@
 	<form action="./add" method="post">
 		Title<input type="text" name="title"> 
 		Contents<input type="text" name="contents"> 
-		Writer<input type="text" name="writer"> 
-		Hit<input type="number" name="hit"> 
+		Writer<input type="text" name="writer">
 		<input type="submit" name="insert">
 		<button type="submit">ADD</button>
 
