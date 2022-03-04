@@ -9,13 +9,12 @@
 <body>
 	<h1>Add page</h1>
 
-	<form action="./add" method="post">
-		Title<input type="text" name="title"> 
-		Contents<input type="text" name="contents"> 
-		Writer<input type="text" name="writer"> 
-		Hit<input type="number" name="hit"> 
-		<input type="submit" name="insert">
-		<button type="submit">ADD</button>
+	<form action="./add" id ='frm' method="post">
+		Title<input type="text" name="title" id="title"> 
+		Contents<input type="text" name="contents" > 
+		Writer<input type="text" name="writer" id="writer"> 
+		<input type="button" name="insert">
+		<button type="buttun" id="btn">ADD</button>
 
 	</form>
 </body>

@@ -22,7 +22,7 @@
       </c:when>
        <c:otherwise>
       <li><a href="/s4/member/login">Login</a></li>
-      <li><a href="/s4/member/join">Join</a></li>
+      <li><a href="/s4/member/joinCheck">Join</a></li>
       </c:otherwise>
       </c:choose>
     </ul>

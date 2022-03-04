@@ -17,13 +17,13 @@
 
 	<table>
 	<tr>
-		<th>제목</th><th>컨텐츠</th><th>hit</th>
+		<th>제목</th><th>컨텐츠</th><th>작성자</th>
 	</tr>
 	<c:forEach items="${list }" var="notice">
 	<tr>
 		<td><a href="./detail?num=${notice.num}">${notice.title}</a></td>
 		<td>${notice.contents}</td>
-		<td>${notice.hit}</td>
+		<td>${notice.writer}</td>
 	</tr>
 	</c:forEach>
 </table>

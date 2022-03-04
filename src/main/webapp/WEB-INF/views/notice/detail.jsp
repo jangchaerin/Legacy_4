@@ -10,6 +10,7 @@
 	<h1>Notice Detail Page</h1>
 	<h3>Name:${dto.title}</h3>
 	<h3>Contents:${dto.contents}</h3>
+	<h3>Writer:${dto.writer}</h3>
 		
 	<a href="./list">List</a>
 	
