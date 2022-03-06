@@ -8,7 +8,9 @@
 		<typeAlias type = "java.lang.Long" alias="Long" />
 		<typeAlias type = "com.chaerin.s4.notice.NoticeDTO" alias="NoticeDTO" />
 		<typeAlias type = "com.chaerin.s4.member.MemberDTO" alias="MemberDTO"/>
+		<typeAlias type = "com.chaerin.s4.qna.QnaDTO" alias="QnaDTO"/>
 		<typeAlias type = "com.chaerin.s4.util.Pager" alias = "Pager"/>
+		
 
 	</typeAliases>
 
