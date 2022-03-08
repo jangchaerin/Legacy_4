@@ -1,15 +1,16 @@
-package com.chaerin.s4.notice;
+package com.chaerin.s4.board;
 
 import java.sql.Date;
 
-public class NoticeDTO {
-	
+public class BoardDTO {
 	private long num;
 	private String title;
 	private String contents;
 	private String writer;
 	private Date regDate;
 	private long hit;
+	
+	
 	public long getNum() {
 		return num;
 	}
@@ -49,6 +50,4 @@ public class NoticeDTO {
 
 	
 	
-	
-
 }

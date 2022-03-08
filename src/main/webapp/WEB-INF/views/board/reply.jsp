@@ -7,14 +7,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Add page</h1>
+	<h1>${board} Reply page</h1>
 
-	<form action="./add" method="post">
+	<form action="./reply" method="post">
+		<input type="hidden" value="${dto.num}" name="num">
 		Title<input type="text" name="title"> 
 		Contents<input type="text" name="contents"> 
 		Writer<input type="text" name="writer">
-		<input type="submit" name="insert">
-		<button type="submit">ADD</button>
+
+		<button type="submit">Reply</button>
 
 	</form>
 </body>
