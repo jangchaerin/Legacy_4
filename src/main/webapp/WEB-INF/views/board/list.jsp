@@ -13,7 +13,7 @@
 <body>
 	<c:import url="../template/header.jsp"></c:import>
 	<div class="table-container">
-		<h1>${board}List Page</h1>
+		<h1>${board} List Page</h1>
 		<!--검색창-->
 		<div class="search">
 			<form action="./list" method="get">

@@ -11,6 +11,11 @@
 </head>
 <body>
 	<c:import url="./template/header.jsp"></c:import>
+	
+	<div class=hea>
+		<img alt="" src="./resources/images/image.jpg">
+	</div>
+	
 	<h1>INDEX PAGE!!</h1>
 	<span class="material-icons-outlined"> account_circle </span>
 

@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 
@@ -104,9 +105,12 @@ public class MemberController {
 	////////////////////////////////////////
 	//insert
 	@RequestMapping(value = "join", method=RequestMethod.POST)
-	public String join(MemberDTO memberDTO)throws Exception{
-		int result = memberService.join(memberDTO);		//dao로 가려면 service를 거쳐야함
-				
+	public String join(MemberDTO memberDTO, MultipartFile photo)throws Exception{
+		
+		int result = memberService.join(memberDTO, photo);		//dao로 가려면 service를 거쳐야함
+		System.out.println(photo.getOriginalFilename());
+		System.out.println(photo.getSize());
+		
 		return "redirect:../";
 	}	
 	@RequestMapping(value ="join", method=RequestMethod.GET)
