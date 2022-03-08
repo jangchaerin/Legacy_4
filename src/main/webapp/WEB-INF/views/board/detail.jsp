@@ -11,7 +11,7 @@
 	<h3>Name:${dto.title}</h3>
 	<h3>Contents:${dto.contents}</h3>
 	<h3>Writer:${dto.writer}</h3>
-	
+
 	<a href="./list">List</a>
 	<a href="./update?num=${dto.num}">Update</a>
 	<a href="./delete?num=${dto.num}">Delete</a>

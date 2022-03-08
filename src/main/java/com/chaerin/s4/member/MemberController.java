@@ -69,16 +69,27 @@ public class MemberController {
 		memberDTO = memberService.login(memberDTO);//파라미터로 넘어올때 까진 NULL 이 아닌데 여기서 객체를 만들어주기때문에 NULL로 된다
 												   //그래서 22번줄에서 여기로 넘어와야함
 		
-		
 		//login 실패 -> 다시 로그인창
-		String path = "redirect:./login";//get 방식
+//		String path = "redirect:./login";//get 방식
+//		
+//		//login 성공 -> index       멤버dto가 널이 아니면 로그인성공
+//		if (memberDTO != null ) {
+//			session.setAttribute("member", memberDTO);
+//			path="redirect:../"; // index로 가려면 한단께올라가면됨
+//
+//		}
 		
-		//login 성공 -> index       멤버dto가 널이 아니면 로그인성공
-		if (memberDTO != null ) {
+		String message="Login Fail";
+		String p="./login";
+		
+		if(memberDTO!=null) {
 			session.setAttribute("member", memberDTO);
-			path="redirect:../"; // index로 가려면 한단께올라가면됨
-			
+			message="Login Success";
+			p="../";
 		}
+		model.addAttribute("message", message);
+		model.addAttribute("path", p);
+		String path="common/result";
 		return path;
 	}
 	
@@ -101,6 +112,10 @@ public class MemberController {
 	@RequestMapping(value ="join", method=RequestMethod.GET)
 	public void join() throws Exception{
 	}
+	@RequestMapping(value ="joinCheck", method=RequestMethod.GET)
+	public void joinCheck() throws Exception{
+	}
+	
 	
 	
 	
