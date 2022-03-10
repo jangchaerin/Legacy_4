@@ -15,7 +15,7 @@
 	</insert>
 
 		<select id="login" parameterType="MemberDTO" resultType="MemberDTO" >
- 		SELECT ID,NAME FROM MEMBER
+ 		SELECT * FROM MEMBER
  		WHERE ID=#{id} AND PW=#{pw}
  	</select>
 
