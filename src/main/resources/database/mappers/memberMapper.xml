@@ -34,7 +34,7 @@
        <result column="name" property="name"/>   <!-- PK를 제외한 나머지 컬럼명, 변수명 -->
        <result column="phone" property="phone"/>  <!--column= select, property = memberFileDTO 변수 -->
        <result column="email" property="email"/>
-       <association property="memberFileDTO" javaType="com.prac.s1.member.MemberFileDTO">   <!-- 멤버하나에 파일 하나 1:1일때 사용,1: N이면 콜렉션 -->
+       <association property="memberFileDTO" javaType="com.chaerin.s4.member.MemberFileDTO">   <!-- 멤버하나에 파일 하나 1:1일때 사용,1: N이면 콜렉션 -->
           <id column="fileNum" property="fileNum"/>
           <result column="fileName" property="fileName"/>
           <result column="oriName" property="oriName"/>
