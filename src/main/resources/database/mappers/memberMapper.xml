@@ -20,29 +20,27 @@
 		INSERT INTO MEMBER (ID, PW, NAME, PHONE, EMAIL)
 		VALUES (#{id}, #{pw},#{name},#{phone},#{email})
 	</insert>
-
-	<!-- <select id="mypage" parameterType="MemberDTO"
-		resultType="mypageResult">
-		SELECT ID, M.NAME, M.PHONE, M.EMAIL, MF.FILENUM, MF.FILENAME, MF.ORINAME
-		FROM
-			MEMBER M
-				LEFT JOIN
-			MEMBERFILE MF
-			USING(ID)
-		WHERE ID=#{id}
-	</select>
 	
-	<resultMap type="MemberDTO" id="mypageResult">
-		<id column="id" property="id"/> PK
-		<result column="name" property="name"/> PK를 제외한 나머지
-		<result column="phone" property="phone"/>
-		<result column="email" property="email"/>
-		<association property="memberFileDTO" javaType="com.chaerin.s4.member.MemberFileDTO">1:1일때 이걸 써줌
-			<id column="fileNum" property="fileNum"/>
-			<result column="fileName" property="fileName"/>
-			<result column="oriName" property="oriName"/>
-		</association> 
-		<collection property=""></collection> 1: N일때 이걸 써줌
-	</resultMap> -->
+	<select id="mypage" parameterType="MemberDTO" resultMap="mypageResult">
+       SELECT ID, M.NAME, M.PHONE, M.EMAIL, MF.FILENUM, MF.FILENAME, MF.ORINAME
+       FROM MEMBER M
+             LEFT JOIN
+          MEMBERFILE MF
+          USING(id)
+       WHERE ID =#{id}
+    
+    </select>
+    
+    <resultMap type="MemberDTO" id="mypageResult">
+       <id column="id" property="id"/>  <!-- PK입력 -->
+       <result column="name" property="name"/>   <!-- PK를 제외한 나머지 컬럼명, 변수명 -->
+       <result column="phone" property="phone"/>  <!--column= select, property = memberFileDTO 변수 -->
+       <result column="email" property="email"/>
+       <association property="memberFileDTO" javaType="com.iu.s1.member.MemberFileDTO">   <!-- 멤버하나에 파일 하나 1:1일때 사용,1: N이면 콜렉션 -->
+          <id column="fileNum" property="fileNum"/>
+          <result column="fileName" property="fileName"/>
+          <result column="oriName" property="oriName"/>
+       </association>
+    </resultMap>
 
 </mapper>
