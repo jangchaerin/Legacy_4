@@ -4,24 +4,22 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.chaerin.s4.member.MemberDAO">
-
-	<insert id="addFile" parameterType="MemberFileDTO">
-		INSERT INTO MEMBERFILE (FILENUM, ID, FILENAME, ORINAME)
-		VALUES (FILE_SEQ.NEXTVAL, #{id}, #{fileName}, #{oriName})
+<insert id="addFile" parameterType="MemberFileDTO">
+	INSERT INTO MEMBERFILE(FILENUM,ID,FILENAME,ORINAME)
+	VALUES(FILE_SEQ.NEXTVAL,#{id},#{fileName},#{oriName})
 	</insert>
-
-	<select id="login" parameterType="MemberDTO"
-		resultType="MemberDTO">
-		SELECT ID, NAME FROM MEMBER
-		WHERE ID=#{id} AND PW=#{pw}
-	</select>
 
 	<insert id="join" parameterType="MemberDTO">
-		INSERT INTO MEMBER (ID, PW, NAME, PHONE, EMAIL)
-		VALUES (#{id}, #{pw},#{name},#{phone},#{email})
+		INSERT INTO MEMBER(ID,PW,NAME,PHONE,EMAIL)
+		VALUES(#{id},#{pw},#{name},#{phone},#{email})
 	</insert>
-	
-	<select id="mypage" parameterType="MemberDTO" resultMap="mypageResult">
+
+		<select id="login" parameterType="MemberDTO" resultType="MemberDTO" >
+ 		SELECT ID,NAME FROM MEMBER
+ 		WHERE ID=#{id} AND PW=#{pw}
+ 	</select>
+
+<select id="mypage" parameterType="MemberDTO" resultMap="mypageResult">
        SELECT ID, M.NAME, M.PHONE, M.EMAIL, MF.FILENUM, MF.FILENAME, MF.ORINAME
        FROM MEMBER M
              LEFT JOIN
@@ -36,11 +34,28 @@
        <result column="name" property="name"/>   <!-- PK를 제외한 나머지 컬럼명, 변수명 -->
        <result column="phone" property="phone"/>  <!--column= select, property = memberFileDTO 변수 -->
        <result column="email" property="email"/>
-       <association property="memberFileDTO" javaType="com.iu.s1.member.MemberFileDTO">   <!-- 멤버하나에 파일 하나 1:1일때 사용,1: N이면 콜렉션 -->
+       <association property="memberFileDTO" javaType="com.prac.s1.member.MemberFileDTO">   <!-- 멤버하나에 파일 하나 1:1일때 사용,1: N이면 콜렉션 -->
           <id column="fileNum" property="fileNum"/>
           <result column="fileName" property="fileName"/>
           <result column="oriName" property="oriName"/>
        </association>
     </resultMap>
+	
+	<update id="update" parameterType="MemberDTO">
+		UPDATE MEMBER SET PW=#{pw},PHONE=#{phone},EMAIL=#{email}
+		WHERE ID=#{id}
+	</update>
 
+	<select id="list" resultType="BankBookDTO" parameterType="Pager">
+		SELECT
+		*FROM
+		(SELECT ROWNUM R, B.* FROM
+		(SELECT * FROM BANKBOOK ORDER BY
+		BOOKNUMBER DESC)B)
+		WHERE R BETWEEN #{startRow} AND #{lastRow}
+	</select>
+	<select id="total" resultType="Long">
+		SELECT COUNT(BOOKNUMBER)FROM
+		BANKBOOK
+	</select>
 </mapper>

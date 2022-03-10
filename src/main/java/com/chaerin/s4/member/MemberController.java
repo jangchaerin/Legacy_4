@@ -26,7 +26,7 @@ public class MemberController {
 	@RequestMapping(value = "mypage", method = RequestMethod.GET)
 	public ModelAndView mypage(HttpSession session) throws Exception {
 		ModelAndView mv = new ModelAndView();
-		MemberDTO memberDTO = (MemberDTO) session.getAttribute("member");// 66번줄에 MEMBERDTO로 넣어서 부모를 꺼낼때 MemberDTO를
+		MemberDTO memberDTO = (MemberDTO)session.getAttribute("member");// 66번줄에 MEMBERDTO로 넣어서 부모를 꺼낼때 MemberDTO를
 																			// 꺼내야해서 형변환해야함
 		memberDTO = memberService.mypage(memberDTO);
 		mv.addObject("dto", memberDTO);
