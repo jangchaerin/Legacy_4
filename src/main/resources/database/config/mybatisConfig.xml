@@ -11,6 +11,7 @@
 		<typeAlias type = "com.chaerin.s4.util.Pager" alias = "Pager"/>
 		<typeAlias type = "com.chaerin.s4.board.BoardDTO" alias="BoardDTO"/>
 		<typeAlias type = "com.chaerin.s4.board.qna.QnaDTO" alias="QnaDTO"/>
+		<typeAlias type = "com.chaerin.s4.member.MemberFileDTO" alias="MemberFileDTO"/>
 
 	</typeAliases>
 
