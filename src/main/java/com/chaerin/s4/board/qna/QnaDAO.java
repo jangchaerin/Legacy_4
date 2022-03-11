@@ -5,9 +5,11 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.chaerin.s4.board.BoardDAO;
 import com.chaerin.s4.board.BoardDTO;
+import com.chaerin.s4.board.BoardFileDTO;
 import com.chaerin.s4.util.Pager;
 
 @Repository
@@ -18,6 +20,15 @@ public class QnaDAO implements BoardDAO {
 	
 	private final String NAMESPACE="com.chaerin.s4.board.qna.QnaDAO.";
 
+	
+	@Override
+	public int addFile(BoardFileDTO boardFileDTO) throws Exception {
+		// TODO Auto-generated method stub
+		return sqlSession.insert(NAMESPACE+"addFile", boardFileDTO);
+	}
+	
+	
+	
 	public int reply(QnaDTO qnaDTO)throws Exception{
 		return sqlSession.insert(NAMESPACE+"reply", qnaDTO);
 	}
@@ -61,6 +72,8 @@ public class QnaDAO implements BoardDAO {
 		// TODO Auto-generated method stub
 		return sqlSession.selectOne(NAMESPACE+"total", pager);
 	}
+
+
 	
 	
 

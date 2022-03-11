@@ -5,9 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.chaerin.s4.board.BoardDTO;
@@ -72,9 +74,9 @@ public class QnaController {
 	}
 	
 	@RequestMapping(value = "add", method=RequestMethod.POST)
-	public ModelAndView add(QnaDTO qnaDTO)throws Exception{
+	public ModelAndView add(QnaDTO qnaDTO,MultipartFile [] files)throws Exception{
 		ModelAndView mv = new ModelAndView();
-		int result = qnaService.add(qnaDTO);
+		int result = qnaService.add(qnaDTO, files);
 		mv.setViewName("redirect:./list");
 		return mv;
 	}

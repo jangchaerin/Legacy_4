@@ -2,6 +2,8 @@ package com.chaerin.s4.board;
 
 import java.util.List;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import com.chaerin.s4.util.Pager;
 
 public interface BoardService {
@@ -10,7 +12,7 @@ public interface BoardService {
 	//detail
 	public BoardDTO detail(BoardDTO boardDTO)throws Exception;
 	//add
-	public int add(BoardDTO boardDTO)throws Exception;
+	public int add(BoardDTO boardDTO, MultipartFile [] files)throws Exception;
 	//update
 	public int update(BoardDTO boardDTO)throws Exception;
 	//delete

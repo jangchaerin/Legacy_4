@@ -5,6 +5,8 @@ import java.util.List;
 import com.chaerin.s4.util.Pager;
 
 public interface BoardDAO {
+	//addFile
+	public int addFile(BoardFileDTO boardFileDTO) throws Exception;
 	//detail
 	public BoardDTO detail(BoardDTO boardDTO) throws Exception;
 	//list
