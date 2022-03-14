@@ -7,7 +7,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.chaerin.s4.board.BoardDTO;
+import com.chaerin.s4.board.BoardFileDTO;
 import com.chaerin.s4.board.BoardService;
+import com.chaerin.s4.member.MemberFileDTO;
 import com.chaerin.s4.util.FileManager;
 import com.chaerin.s4.util.Pager;
 @Service
@@ -16,6 +18,12 @@ public class NoticeService implements BoardService {
 	private NoticeDAO noticeDAO;
 	@Autowired
 	private FileManager fileManager;
+	
+
+	public NoticeFileDTO detailFile(NoticeFileDTO noticeFileDTO) throws Exception {
+		// TODO Auto-generated method stub
+		return noticeDAO.detailFile(noticeFileDTO);
+	}
 
 	@Override
 	public List<BoardDTO> list(Pager pager) throws Exception {
@@ -71,6 +79,8 @@ public class NoticeService implements BoardService {
 		// TODO Auto-generated method stub
 		return noticeDAO.delete(boardDTO);
 	}
+
+
 	
 	
 

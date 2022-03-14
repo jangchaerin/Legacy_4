@@ -13,6 +13,10 @@ public class MemberDAO {
 	private SqlSession sqlSession;
 	private final String NAMESPACE="com.chaerin.s4.member.MemberDAO.";
 	
+	public MemberFileDTO detailFile(MemberFileDTO memberFileDTO) throws Exception{
+		return sqlSession.selectOne(NAMESPACE+"detailFile", memberFileDTO);
+	}
+	
 	public int addFile(MemberFileDTO memberFileDTO) throws Exception{
 	      return sqlSession.insert(NAMESPACE+"addFile",memberFileDTO);
 	}

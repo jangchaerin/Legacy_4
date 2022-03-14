@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,15 +7,17 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>My page 입니다</h1>
-<h3>${dto.id }</h3>
-<h3>${dto.name }</h3>
-<h3>${dto.phone }</h3>
-<h3>${dto.email }</h3>
-<img alt="" src="../resources/upload/member/${dto.memberFileDTO.fileName}">
-<h3>${dto.memberFileDTO.oriName}</h3>
+	<h1>My page 입니다</h1>
+	<h3>${dto.id }</h3>
+	<h3>${dto.name }</h3>
+	<h3>${dto.phone }</h3>
+	<h3>${dto.email }</h3>
+	<img alt=""
+		src="../resources/upload/member/${dto.memberFileDTO.fileName}">
+	<a href="./photoDown?fileNum=${dto.memberFileDTO.fileNum}">${dto.memberFileDTO.oriName}</a>
+	<h3>${dto.memberFileDTO.oriName}</h3>
 
 
-<a href="./update?id=${dto.id}">수정하기</a>
+	<a href="./update?id=${dto.id}">수정하기</a>
 </body>
 </html>

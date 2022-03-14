@@ -5,6 +5,11 @@
  
     
     <mapper namespace="com.chaerin.s4.board.notice.NoticeDAO">
+    	<select id="detailFile" parameterType="NoticeFileDTO" resultType="NoticeFileDTO">
+    		SELECT * FROM NOTICEFILE
+    		WHERE FILENUM=#{fileNum}
+    	</select>
+    	
     
     	
 		<insert id="addFile" parameterType="BoardFileDTO" >

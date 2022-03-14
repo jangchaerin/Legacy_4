@@ -12,6 +12,8 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.chaerin.s4.board.BoardDTO;
+import com.chaerin.s4.board.BoardFileDTO;
+import com.chaerin.s4.board.BoardService;
 import com.chaerin.s4.util.Pager;
 
 @Controller
@@ -23,6 +25,19 @@ public class NoticeController {
 	@ModelAttribute("board")
 	public String board() {
 		return "notice";
+	}
+	
+	//filedown
+	@RequestMapping(value="fileDown", method=RequestMethod.GET)
+	public ModelAndView fileDown(NoticeFileDTO noticeFileDTO)throws Exception{
+		ModelAndView mv = new ModelAndView();
+		noticeFileDTO=noticeService.detailFile(noticeFileDTO);
+		
+		mv.setViewName("fileDown");
+		mv.addObject("file", noticeFileDTO);
+		
+		return mv;
+		
 	}
 	
 	//detail

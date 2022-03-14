@@ -10,6 +10,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.chaerin.s4.board.BoardDAO;
 import com.chaerin.s4.board.BoardDTO;
 import com.chaerin.s4.board.BoardFileDTO;
+import com.chaerin.s4.member.MemberFileDTO;
 import com.chaerin.s4.util.Pager;
 
 @Repository
@@ -18,6 +19,11 @@ public class NoticeDAO implements BoardDAO {
 	@Autowired
 	private SqlSession sqlSession;
 	private final String NAMESPACE = "com.chaerin.s4.board.notice.NoticeDAO.";
+	
+	public NoticeFileDTO detailFile(NoticeFileDTO noticeFileDTO) throws Exception{
+		return sqlSession.selectOne(NAMESPACE+"detailFile", noticeFileDTO);
+	}
+	
 	
 	@Override
 	public int addFile(BoardFileDTO boardFileDTO) throws Exception {

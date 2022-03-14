@@ -14,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.chaerin.s4.board.BoardDTO;
 import com.chaerin.s4.board.notice.NoticeDTO;
+import com.chaerin.s4.board.notice.NoticeFileDTO;
 import com.chaerin.s4.util.Pager;
 @Controller
 @RequestMapping("/qna/**")
@@ -26,6 +27,19 @@ public class QnaController {
 	public String board() {
 		return "qna";
 	}
+	
+	//filedown
+		@RequestMapping(value="fileDown", method=RequestMethod.GET)
+		public ModelAndView fileDown(QnaFileDTO qnaFileDTO)throws Exception{
+			ModelAndView mv = new ModelAndView();
+			qnaFileDTO=qnaService.detailFile(qnaFileDTO);
+			
+			mv.setViewName("fileDown");
+			mv.addObject("file", qnaFileDTO);
+			
+			return mv;
+			
+		}
 	
 	@RequestMapping(value="reply", method=RequestMethod.POST)
 	public ModelAndView reply(QnaDTO qnaDTO)throws Exception{

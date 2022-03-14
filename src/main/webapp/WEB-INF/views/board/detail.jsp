@@ -16,12 +16,14 @@
 	
 	<div>
 		<c:forEach items="${dto.fileDTOs}" var="f"> <!-- f라는 변수에 filedtos를 담는다 -->
-			<a href="../resources/upload/${board}/${f.fileName}">${f.oriName}</a>
+		<%-- <a href="../resources/upload/${board}/${f.fileName}">${f.oriName}</a> --%>
 				<!-- image태그가 아니라 a태그 씀. 첨부파일이 꼭 이미지일 경우는 없기때문 -->
 				<!-- ${board} 를 써주는 이유는 notice일떄와 qna일때 저장되는 폴더가 다르기때문-->
-		</c:forEach>
-	</div>
+				<a href="./fileDown?fileNum=${f.fileNum}">${f.oriName}</a> 
 
+		</c:forEach>
+		
+	</div>
 	<a href="./list">List</a>
 	<a href="./update?num=${dto.num}">Update</a>
 	<a href="./delete?num=${dto.num}">Delete</a>

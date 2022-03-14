@@ -10,6 +10,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.chaerin.s4.board.BoardDAO;
 import com.chaerin.s4.board.BoardDTO;
 import com.chaerin.s4.board.BoardFileDTO;
+import com.chaerin.s4.board.notice.NoticeFileDTO;
 import com.chaerin.s4.util.Pager;
 
 @Repository
@@ -20,6 +21,10 @@ public class QnaDAO implements BoardDAO {
 	
 	private final String NAMESPACE="com.chaerin.s4.board.qna.QnaDAO.";
 
+	public QnaFileDTO detailFile( QnaFileDTO qnaFileDTO) throws Exception{
+		return sqlSession.selectOne(NAMESPACE+"detailFile", qnaFileDTO);
+	}
+	
 	
 	@Override
 	public int addFile(BoardFileDTO boardFileDTO) throws Exception {

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.chaerin.s4.board.BoardDTO;
+import com.chaerin.s4.board.BoardFileDTO;
 import com.chaerin.s4.board.BoardService;
 import com.chaerin.s4.board.notice.NoticeFileDTO;
 import com.chaerin.s4.util.FileManager;
@@ -20,6 +21,12 @@ public class QnaService implements BoardService {
 	@Autowired
 	private FileManager fileManager;
 
+	public QnaFileDTO detailFile(QnaFileDTO qnaFileDTO) throws Exception {
+		// TODO Auto-generated method stub
+		return qnaDAO.detailFile(qnaFileDTO);
+	}
+
+	
 	@Override
 	public List<BoardDTO> list(Pager pager) throws Exception {
 		pager.makeRow();
@@ -110,5 +117,9 @@ public class QnaService implements BoardService {
 		
 		return result;
 	}
+
+
+
+	
 
 }

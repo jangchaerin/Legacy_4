@@ -13,6 +13,10 @@ public class MemberService {
 	private MemberDAO memberDAO;
 	@Autowired
 	private FileManager fileManager;
+	
+	public MemberFileDTO detailFile (MemberFileDTO membeFileDTO) throws Exception{
+		return memberDAO.detailFile(membeFileDTO);
+	}
 
 	public MemberDTO mypage(MemberDTO memberDTO) throws Exception {
 		return memberDAO.mypage(memberDTO);
