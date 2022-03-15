@@ -5,12 +5,16 @@
  
     
     <mapper namespace="com.chaerin.s4.board.notice.NoticeDAO">
+    	
+    	<select id="listFile" parameterType="BoardDTO" resultType="NoticeFileDTO">
+    		SELECT * FROM NOTICEFILE
+    		WHERE NUM=#{num}
+    	</select>
+    	
     	<select id="detailFile" parameterType="NoticeFileDTO" resultType="NoticeFileDTO">
     		SELECT * FROM NOTICEFILE
     		WHERE FILENUM=#{fileNum}
     	</select>
-    	
-    
     	
 		<insert id="addFile" parameterType="BoardFileDTO" >
     		INSERT INTO NOTICEFILE (FILENUM, NUM, FILENAME, ORINAME)
@@ -30,7 +34,6 @@
 			INSERT INTO NOTICE(NUM, TITLE, CONTENTS, WRITER, REGDATE, HIT)
 			VALUES(#{num}, #{title},#{contents},#{writer},SYSDATE,#{hit})
 		</insert>
-    
     
     	<select id="list" parameterType ="Pager" resultType="NoticeDTO">
 			SELECT * FROM
@@ -78,7 +81,6 @@
 		
 		</resultMap>
 		
-		
 		<delete id="delete" parameterType="NoticeDTO">
 			DELETE NOTICE WHERE NUM=#{num}
 		</delete>
@@ -103,7 +105,5 @@
 		<update id="update" parameterType="NoticeDTO">
 			UPDATE NOTICE SET TITLE = #{title},CONTENTS=#{contents}	where num=#{num}
 		</update>
-	
-	
-    
+
     </mapper>
