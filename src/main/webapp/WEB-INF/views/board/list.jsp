@@ -64,11 +64,12 @@
 			</c:if>
 		</div>
 
-		<div>
-			<button>
+		
+			<c:if test ="${not empty member}">
 				<a href="./add">A D D</a>
-			</button>
-		</div>
+			</c:if>
+			
+		
 	</div>
 </body>
 </html>
