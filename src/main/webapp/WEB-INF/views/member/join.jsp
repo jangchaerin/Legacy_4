@@ -61,6 +61,6 @@
 
 		</form>
 	</div>
-	<!-- <script type="text/javascript" src=../resources/js/join2.js></script> -->
+	<!--  <script type="text/javascript" src=../resources/js/join2.js></script>-->
 </body>
 </html>
