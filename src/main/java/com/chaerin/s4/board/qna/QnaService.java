@@ -46,10 +46,10 @@ public class QnaService implements BoardService {
 	public int add(BoardDTO boardDTO, MultipartFile [] files) throws Exception {
 		// TODO Auto-generated method stub
 		
-		int result = qnaDAO.add(boardDTO);
+		int result = qnaDAO.add(boardDTO); 
 		
 		//1.HDD에 저장
-		for(int i=0;i<files.length;i++) {
+		for(int i=0;i<files.length;i++) { 
 			if(files[i].isEmpty()){
 				//files[i].getsize()가 0과 같습니까 
 				continue;

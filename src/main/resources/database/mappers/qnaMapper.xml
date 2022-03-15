@@ -36,7 +36,7 @@
 				SELECT QNA_SEQ.NEXTVAL FROM DUAL
 	</selectKey>
  		insert into qna (num, writer, title, contents, regDate, hit, ref, step, depth)
- 		values (#{num}, #{writer}, #{title}, #{contents}, sysdate, 0, qna_seq.currval, 0, 0)
+ 		values (#{num}, #{writer}, #{title}, #{contents}, sysdate, 0, #{num}, 0, 0)
  	</insert>
  
  	<select id="detail" parameterType="QnaDTO" resultMap="detailResult">
