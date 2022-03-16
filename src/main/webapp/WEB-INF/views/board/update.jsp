@@ -10,9 +10,10 @@
 	<h1>${board} Update Page</h1>
 
 	<form action="./update" method="post">
-		<input type="hidden" name="num" value="${dto.num }"> Title<input
-			type="text" name="title" value="${dto.title}"> Contents
-		<textarea name="contents" rows="10" cols="">${dto.contents}</textarea>
+		<input type="hidden" name="num" value="${dto.num }"> 
+		Title<input type="text" name="title" value="${dto.title}"> 
+		Writer<input type="text" name="writer" value="${dto.writer}" readonly> 
+		Contents<textarea name="contents" rows="10" cols="">${dto.contents}</textarea>
 
 
 

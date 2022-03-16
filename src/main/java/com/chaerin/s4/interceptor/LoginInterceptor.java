@@ -19,7 +19,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter{
 		MemberDTO memberDTO = (MemberDTO)request.getSession().getAttribute("member");
 		
 		boolean check = true;	
-		
+		System.out.println("Login Interceptor");
 		if(memberDTO==null) {
 			check=false;		//login이 안됐기 때문에 통과 x			
 			//1. foward 형식 - servlet 문법 사용 spring문법 x
