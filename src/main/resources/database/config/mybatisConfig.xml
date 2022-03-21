@@ -17,6 +17,7 @@
 		<typeAlias type = "com.chaerin.s4.board.notice.NoticeFileDTO" alias="NoticeFileDTO"/>
 		<typeAlias type = "com.chaerin.s4.board.qna.QnaFileDTO" alias="QnaFileDTO"/>
 		<typeAlias type = "java.util.List" alias="List"/>
+		<typeAlias type = "com.chaerin.s4.board.notice.noticeReply.NoticeReplyDTO" alias="NoticeReplyDTO"/>
 
 	</typeAliases>
 </configuration>
