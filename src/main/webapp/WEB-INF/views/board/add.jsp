@@ -5,6 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<c:import url="../template/header_css.jsp"></c:import>
+
 </head>
 <body>
 	<h1>${board} Add page</h1>
@@ -27,6 +29,7 @@
 
 		<div>
 			<button type="button" id = "fileAdd">fileAdd</button>
+			<button type="button class="del">Sample</button>
 		</div>
 
 		
